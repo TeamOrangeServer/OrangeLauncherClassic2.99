@@ -34,6 +34,9 @@ public class AboutDialog extends JDialog {
                 "launcher platform that anyone can use."), "wrap, gapbottom unrel");
         container.add(new JLabel("<html>SKCraft does not necessarily endorse the version of<br>" +
                 "the launcher that you are using."), "wrap, gapbottom unrel");
+        container.add(new JLabel("<html>OAI Launcher Classic(Orange and Integration Launcher Classic)\u306f <br>" +
+                "SKCraft Launcher\u3092\u30d9\u30fc\u30b9\u306b\u4f5c\u6210\u3055\u308c\u3066\u3044\u307e\u3059\u3002"), "wrap, gapbottom unrel");
+        container.add(new JLabel("<html>Classic\u7248\u306e\u7ffb\u8a33\u4e88\u5b9a\u306f\u3042\u308a\u307e\u305b\u3093\u3002"), "wrap, gapbottom unrel");
 
         JButton okButton = new JButton("OK");
         JButton sourceCodeButton = new JButton("Website");
@@ -47,7 +50,7 @@ public class AboutDialog extends JDialog {
         getRootPane().registerKeyboardAction(ActionListeners.dispose(this), KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_IN_FOCUSED_WINDOW);
 
         okButton.addActionListener(ActionListeners.dispose(this));
-        sourceCodeButton.addActionListener(ActionListeners.openURL(this, "https://github.com/SKCraft/Launcher"));
+        sourceCodeButton.addActionListener(ActionListeners.openURL(this, "https://oocp.dip.jp/launcher"));
     }
 
     public static void showAboutDialog(Window parent) {

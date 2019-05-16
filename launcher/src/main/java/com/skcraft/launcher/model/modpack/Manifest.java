@@ -6,23 +6,25 @@
 
 package com.skcraft.launcher.model.modpack;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Strings;
 import com.skcraft.launcher.Instance;
 import com.skcraft.launcher.LauncherUtils;
-import com.skcraft.launcher.model.minecraft.VersionManifest;
 import com.skcraft.launcher.install.Installer;
+import com.skcraft.launcher.model.minecraft.VersionManifest;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
+//import net.teamfruit.skcraft.launcher.model.modpack.ConnectServerInfo;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -82,11 +84,35 @@ public class Manifest extends BaseManifest {
         }
     }
 
+    public void updateThumb(String thumb) {
+        if (thumb != null) {
+            setThumb(thumb);
+        }
+    }
+
     public void updateGameVersion(String gameVersion) {
         if (gameVersion != null) {
             setGameVersion(gameVersion);
         }
     }
+
+    public void updateKey(String key) {
+        if (key != null) {
+            setKey(key);
+        }
+    }
+
+    public void updateServer(String serverHost, int serverPort) {
+        if (serverHost != null) {
+        	return;
+        }
+    }
+
+/*    public void updateServer(ConnectServerInfo server) {
+        if (server != null && server.isValid()) {
+    		setServer(server);
+        }
+    }*/
 
     public void update(Instance instance) {
         instance.setLaunchModifier(getLaunchModifier());

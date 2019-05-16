@@ -6,13 +6,20 @@
 
 package com.skcraft.launcher.model.modpack;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
+//import net.teamfruit.skcraft.launcher.model.modpack.ConnectServerInfo;
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class BaseManifest {
 
     private String title;
+    private String thumb;
     private String name;
     private String version;
+    private String key;
+//    private ConnectServerInfo server;
 
 }
